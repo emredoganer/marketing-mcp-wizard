@@ -20,6 +20,7 @@ npx marketing-mcp-wizard
     ◉ Google Analytics — GA4 reports, user metrics, real-time data
     ◉ Microsoft Clarity — Session recordings, heatmaps, UX analytics
     ◉ Google Search Console — SEO performance, search queries, indexing
+    ◉ Shopify — Products, orders, customers, discounts, draft orders
     ◯ Google Ads — Ad performance (via GA4 integration)
 ```
 
@@ -85,6 +86,14 @@ The wizard generates a `.mcp.json` file compatible with Claude Code:
       "args": ["-y", "mcp-server-gsc"],
       "env": {
         "GOOGLE_APPLICATION_CREDENTIALS": "/path/to/credentials.json"
+      }
+    },
+    "shopify": {
+      "command": "npx",
+      "args": ["-y", "shopify-mcp-server"],
+      "env": {
+        "SHOPIFY_ACCESS_TOKEN": "shpat_xxx",
+        "MYSHOPIFY_DOMAIN": "my-store.myshopify.com"
       }
     }
   }
