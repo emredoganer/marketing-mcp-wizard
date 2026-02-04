@@ -2,7 +2,7 @@
 
 Interactive CLI that sets up marketing analytics [MCP servers](https://modelcontextprotocol.io/) for [Claude Code](https://docs.anthropic.com/en/docs/claude-code).
 
-Connect Google Analytics, Microsoft Clarity, Search Console, and Google Ads to Claude Code in one command.
+Connect Google Analytics, Microsoft Clarity, Search Console, Shopify, and Google Ads to Claude Code in one command.
 
 ## Quick Start
 
@@ -30,6 +30,7 @@ npx marketing-mcp-wizard
 | Google Analytics | [`analytics-mcp`](https://github.com/MarketerHQ/ga-mcp-server) | Service Account JSON |
 | Microsoft Clarity | [`@anthropic-ai/mcp-server-clarity`](https://github.com/microsoft/clarity-mcp-server) | API Key |
 | Google Search Console | [`mcp-server-gsc`](https://github.com/nicholasoxford/mcp-server-gsc) | Service Account JSON |
+| Shopify | [`shopify-mcp-server`](https://github.com/pashpashpash/shopify-mcp-server) | Access Token |
 | Google Ads | via GA4 | GA4 link |
 
 ## What It Does
@@ -56,6 +57,7 @@ Once configured, Claude Code can:
 - **Google Analytics** — Query GA4 reports, active users, sessions, bounce rates, real-time data
 - **Microsoft Clarity** — View session recordings, dead clicks, rage clicks, scroll depth, JS errors
 - **Search Console** — Analyze search queries, impressions, CTR, indexing status, SEO performance
+- **Shopify** — Manage products, orders, customers, discounts, and draft orders
 - **Google Ads** — Access ad clicks, costs, CPC, ROAS through GA4 integration
 
 ## Output
