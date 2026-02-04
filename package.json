@@ -1,0 +1,60 @@
+{
+  "name": "marketing-mcp-wizard",
+  "version": "1.0.0",
+  "description": "Set up marketing analytics MCP servers for Claude Code — Google Analytics, Clarity, Search Console & more",
+  "type": "module",
+  "main": "dist/index.js",
+  "bin": {
+    "marketing-mcp-wizard": "./bin/cli.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "start": "node bin/cli.js",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "mcp",
+    "claude",
+    "claude-code",
+    "model-context-protocol",
+    "marketing",
+    "analytics",
+    "google-analytics",
+    "ga4",
+    "clarity",
+    "microsoft-clarity",
+    "search-console",
+    "seo",
+    "google-ads",
+    "cli",
+    "wizard"
+  ],
+  "author": "Emre Doganer",
+  "license": "MIT",
+  "homepage": "https://github.com/emredoganer/marketing-mcp-wizard#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/emredoganer/marketing-mcp-wizard.git"
+  },
+  "bugs": {
+    "url": "https://github.com/emredoganer/marketing-mcp-wizard/issues"
+  },
+  "files": [
+    "dist",
+    "bin"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "chalk": "^5.3.0",
+    "commander": "^12.1.0",
+    "enquirer": "^2.4.1",
+    "ora": "^8.1.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.0",
+    "typescript": "^5.5.0"
+  }
+}
