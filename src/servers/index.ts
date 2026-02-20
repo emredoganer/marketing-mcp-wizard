@@ -2,7 +2,6 @@ import { McpServerPlugin } from './base.js';
 import { googleAnalytics } from './google-analytics.js';
 import { clarity } from './clarity.js';
 import { searchConsole } from './search-console.js';
-import { shopify } from './shopify.js';
 import { metaAds } from './meta-ads.js';
 import { googleAds } from './google-ads.js';
 
@@ -10,7 +9,6 @@ export const servers: McpServerPlugin[] = [
   googleAnalytics,
   clarity,
   searchConsole,
-  shopify,
   metaAds,
   googleAds,
 ];

@@ -57,13 +57,6 @@ const promptSuggestions: Record<string, { label: string; prompts: string[] }> = 
       'Are there any pages with indexing issues?',
     ],
   },
-  'shopify': {
-    label: 'Shopify',
-    prompts: [
-      'Show my top-selling products this month',
-      'How many orders did I get this week?',
-    ],
-  },
   'meta-ads': {
     label: 'Meta Ads',
     prompts: [
