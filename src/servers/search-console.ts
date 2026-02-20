@@ -10,7 +10,7 @@ const enquirer = new Enquirer();
 export const searchConsole: McpServerPlugin = {
   id: 'search-console',
   name: 'Google Search Console',
-  description: 'SEO performance, search queries, indexing status',
+  description: 'How people find you on Google — rankings, clicks, keywords',
   links: [
     { label: 'Docs', url: 'https://github.com/nicholasoxford/mcp-server-gsc' },
     { label: 'Create Service Account', url: 'https://console.cloud.google.com/iam-admin/serviceaccounts' },

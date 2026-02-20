@@ -1,7 +1,7 @@
 {
   "name": "marketing-mcp-wizard",
-  "version": "1.0.0",
-  "description": "Set up marketing analytics MCP servers for Claude Code — Google Analytics, Clarity, Search Console & more",
+  "version": "1.1.0",
+  "description": "Connect marketing tools to Claude Code — Google Analytics, Clarity, Search Console, Shopify, Meta Ads & more",
   "type": "module",
   "main": "dist/index.js",
   "bin": {
@@ -27,6 +27,9 @@
     "search-console",
     "seo",
     "google-ads",
+    "meta-ads",
+    "facebook-ads",
+    "instagram-ads",
     "shopify",
     "cli",
     "wizard"

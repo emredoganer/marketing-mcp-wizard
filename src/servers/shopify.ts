@@ -8,7 +8,7 @@ const enquirer = new Enquirer();
 export const shopify: McpServerPlugin = {
   id: 'shopify',
   name: 'Shopify',
-  description: 'Products, orders, customers, discounts, draft orders',
+  description: 'Your store data — orders, products, customers',
   links: [
     { label: 'Docs', url: 'https://github.com/pashpashpash/shopify-mcp-server' },
     { label: 'Create Custom App', url: 'https://help.shopify.com/en/manual/apps/app-types/custom-apps' },

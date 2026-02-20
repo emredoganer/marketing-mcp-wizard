@@ -26,6 +26,15 @@ export function readExistingConfig(configPath: string): McpConfig {
   return { mcpServers: {} };
 }
 
+export function readAllConfigs(): { global: McpConfig; local: McpConfig } {
+  const globalPath = getConfigPath(true);
+  const localPath = getConfigPath(false);
+  return {
+    global: readExistingConfig(globalPath),
+    local: readExistingConfig(localPath),
+  };
+}
+
 export function writeConfig(
   configPath: string,
   entries: Record<string, McpJsonEntry>

@@ -10,7 +10,7 @@ const enquirer = new Enquirer();
 export const googleAnalytics: McpServerPlugin = {
   id: 'google-analytics',
   name: 'Google Analytics',
-  description: 'GA4 reports, user metrics, real-time data',
+  description: 'Website traffic, user behavior, real-time visitors',
   links: [
     { label: 'Docs', url: 'https://github.com/MarketerHQ/ga-mcp-server' },
     { label: 'Create Service Account', url: 'https://console.cloud.google.com/iam-admin/serviceaccounts' },

@@ -8,7 +8,7 @@ const enquirer = new Enquirer();
 export const clarity: McpServerPlugin = {
   id: 'clarity',
   name: 'Microsoft Clarity',
-  description: 'Session recordings, heatmaps, UX analytics',
+  description: 'See what users do — clicks, scrolls, session recordings',
   links: [
     { label: 'Docs', url: 'https://github.com/microsoft/clarity-mcp-server' },
     { label: 'Get API Token', url: 'https://clarity.microsoft.com/' },

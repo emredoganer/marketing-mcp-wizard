@@ -8,7 +8,7 @@ const enquirer = new Enquirer();
 export const googleAds: McpServerPlugin = {
   id: 'google-ads',
   name: 'Google Ads',
-  description: 'Ad performance (via GA4 integration)',
+  description: 'Ad spend & performance (works through Google Analytics)',
   links: [
     { label: 'Docs', url: 'https://developers.google.com/google-ads/api/docs/start' },
     { label: 'Credentials', url: 'https://console.cloud.google.com/apis/credentials' },

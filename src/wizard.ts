@@ -25,7 +25,7 @@ interface WizardOptions {
 }
 
 function checkPrerequisites(): void {
-  showInfo('Checking prerequisites...');
+  showInfo('Checking your setup...');
 
   // Check Node.js
   try {
@@ -49,8 +49,8 @@ function checkPrerequisites(): void {
     execSync('pipx --version', { encoding: 'utf-8', stdio: 'pipe' });
     showSuccess('pipx available');
   } catch {
-    showWarning('pipx not found. Required for Google Analytics.');
-    showLink('Install', 'https://pipx.pypa.io/stable/installation/');
+    showWarning('pipx not found — only needed for Google Analytics. Skip for now or install later.');
+    showLink('Install pipx', 'https://pipx.pypa.io/stable/installation/');
   }
 
   console.log();
@@ -65,9 +65,9 @@ async function selectServers(): Promise<McpServerPlugin[]> {
   const { selected } = await enquirer.prompt({
     type: 'multiselect',
     name: 'selected',
-    message: 'Which MCP servers would you like to set up?',
+    message: 'Which tools would you like to connect?',
     choices,
-    validate: (v: any) => (Array.isArray(v) ? v.length > 0 : !!v) || 'Select at least one server',
+    validate: (v: any) => (Array.isArray(v) ? v.length > 0 : !!v) || 'Select at least one',
   }) as { selected: string[] };
 
   return servers.filter(s => selected.includes(s.id));
@@ -116,7 +116,7 @@ async function setupServer(
         const { continueAnyway } = await enquirer.prompt({
           type: 'confirm',
           name: 'continueAnyway',
-          message: 'Save the config anyway?',
+          message: "Connection couldn't be verified. Save and try later?",
           initial: true,
         }) as { continueAnyway: boolean };
         if (!continueAnyway) return null;
@@ -127,7 +127,7 @@ async function setupServer(
       const { continueAnyway } = await enquirer.prompt({
         type: 'confirm',
         name: 'continueAnyway',
-        message: 'Save the config anyway?',
+        message: "Connection couldn't be verified. Save and try later?",
         initial: true,
       }) as { continueAnyway: boolean };
       if (!continueAnyway) return null;
@@ -193,5 +193,5 @@ export async function runWizard(options: WizardOptions): Promise<void> {
   // Write config
   writeConfig(configPath, entries);
 
-  showCompletionMessage();
+  showCompletionMessage(Object.keys(entries));
 }

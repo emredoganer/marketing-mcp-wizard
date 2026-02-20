@@ -2,7 +2,7 @@
 
 Interactive CLI that sets up marketing analytics [MCP servers](https://modelcontextprotocol.io/) for [Claude Code](https://docs.anthropic.com/en/docs/claude-code).
 
-Connect Google Analytics, Microsoft Clarity, Search Console, Shopify, and Google Ads to Claude Code in one command.
+Connect Google Analytics, Microsoft Clarity, Search Console, Shopify, Meta Ads, and Google Ads to Claude Code in one command.
 
 ## Quick Start
 
@@ -11,17 +11,18 @@ npx marketing-mcp-wizard
 ```
 
 ```
-  ┌─────────────────────────────────────────────────┐
-  │   Marketing MCP Wizard                          │
-  │   Marketing analytics MCP setup for Claude Code  │
-  └─────────────────────────────────────────────────┘
+  ┌──────────────────────────────────────────────────────────┐
+  │   Marketing MCP Wizard                                   │
+  │   Connect your marketing tools to Claude — no coding needed│
+  └──────────────────────────────────────────────────────────┘
 
-  ? Which MCP servers would you like to set up?
-    ◉ Google Analytics — GA4 reports, user metrics, real-time data
-    ◉ Microsoft Clarity — Session recordings, heatmaps, UX analytics
-    ◉ Google Search Console — SEO performance, search queries, indexing
-    ◉ Shopify — Products, orders, customers, discounts, draft orders
-    ◯ Google Ads — Ad performance (via GA4 integration)
+  ? Which tools would you like to connect?
+    ◉ Google Analytics — Website traffic, user behavior, real-time visitors
+    ◉ Microsoft Clarity — See what users do — clicks, scrolls, session recordings
+    ◉ Google Search Console — How people find you on Google — rankings, clicks, keywords
+    ◉ Shopify — Your store data — orders, products, customers
+    ◉ Meta Ads — Facebook & Instagram ad campaigns, spend, performance
+    ◯ Google Ads — Ad spend & performance (works through Google Analytics)
 ```
 
 ## Supported Servers
@@ -32,11 +33,12 @@ npx marketing-mcp-wizard
 | Microsoft Clarity | [`@anthropic-ai/mcp-server-clarity`](https://github.com/microsoft/clarity-mcp-server) | API Key |
 | Google Search Console | [`mcp-server-gsc`](https://github.com/nicholasoxford/mcp-server-gsc) | Service Account JSON |
 | Shopify | [`shopify-mcp-server`](https://github.com/pashpashpash/shopify-mcp-server) | Access Token |
+| Meta Ads | [`meta-ads-mcp`](https://github.com/brijr/meta-mcp) | Access Token |
 | Google Ads | via GA4 | GA4 link |
 
 ## What It Does
 
-1. **Select** which marketing MCP servers to set up
+1. **Select** which marketing tools to connect
 2. **Enter** credentials with guided prompts and helpful links
 3. **Test** each connection automatically
 4. **Save** config to `~/.mcp.json` (global) or `.mcp.json` (local)
@@ -47,19 +49,21 @@ npx marketing-mcp-wizard
 ```bash
 npx marketing-mcp-wizard              # Interactive setup
 npx marketing-mcp-wizard --list       # List supported servers
+npx marketing-mcp-wizard --status     # Show which servers are configured
 npx marketing-mcp-wizard --skip-tests # Skip connection tests
 npx marketing-mcp-wizard --global     # Save to ~/.mcp.json directly
 ```
 
 ## What You Can Do After Setup
 
-Once configured, Claude Code can:
+Once configured, ask Claude things like:
 
-- **Google Analytics** — Query GA4 reports, active users, sessions, bounce rates, real-time data
-- **Microsoft Clarity** — View session recordings, dead clicks, rage clicks, scroll depth, JS errors
-- **Search Console** — Analyze search queries, impressions, CTR, indexing status, SEO performance
-- **Shopify** — Manage products, orders, customers, discounts, and draft orders
-- **Google Ads** — Access ad clicks, costs, CPC, ROAS through GA4 integration
+- **Google Analytics** — "Analyze my website traffic for the last 30 days"
+- **Microsoft Clarity** — "Show me sessions with rage clicks from this week"
+- **Search Console** — "Which keywords am I ranking for but getting low clicks?"
+- **Shopify** — "Show my top-selling products this month"
+- **Meta Ads** — "How are my Facebook campaigns performing this week?"
+- **Google Ads** — "What's my ad spend and ROAS this month?" (via GA4)
 
 ## Output
 
@@ -95,6 +99,13 @@ The wizard generates a `.mcp.json` file compatible with Claude Code:
         "SHOPIFY_ACCESS_TOKEN": "shpat_xxx",
         "MYSHOPIFY_DOMAIN": "my-store.myshopify.com"
       }
+    },
+    "meta-ads": {
+      "command": "npx",
+      "args": ["-y", "meta-ads-mcp"],
+      "env": {
+        "META_ACCESS_TOKEN": "your_access_token"
+      }
     }
   }
 }
@@ -103,7 +114,7 @@ The wizard generates a `.mcp.json` file compatible with Claude Code:
 ## Prerequisites
 
 - **Node.js 18+**
-- **pipx** — required for Google Analytics ([install](https://pipx.pypa.io/stable/installation/))
+- **pipx** — only needed for Google Analytics ([install](https://pipx.pypa.io/stable/installation/))
 
 ## License
 
